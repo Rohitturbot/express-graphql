@@ -1,4 +1,4 @@
-#Simple Express Server with GraphQL
+# Simple Express Server with GraphQL
 
 This is very simple express server ready to use with the integration of graphql.
 
