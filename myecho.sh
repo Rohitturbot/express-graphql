@@ -63,5 +63,3 @@ function error_msg {
   echo -e "${RED}ERROR: $1 ${OFF}"
 }
 main $@
-
-1f74d4faf04dcecbc6d6cf2647033ce23507f866
