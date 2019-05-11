@@ -41,7 +41,7 @@ function pushed_files {
     # do
     #   echo "Welcome $i times"
     # done
-  	for val in $FILES;
+  	for val in ${FILES[@]};
     do
   	#   path=$(cut -d'/' -f 1-2 <<<$val)
     #   echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
