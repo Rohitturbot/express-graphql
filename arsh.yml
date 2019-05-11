@@ -1,0 +1,58 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  install:
+    #runtime-versions:
+      # name: version
+      # name: version
+    commands:
+        - echo "Strated installation"
+        # - pwd
+        # - ls -la
+        # - chmod +x myecho.sh
+        # - ./myecho.sh
+        # - npm i
+        # - cat log.txt
+        # - git branch
+        # - cd ../
+        # - ls -la
+        # - echo "its working..."
+      # - command
+      # - command
+  pre_build:
+    commands:
+        - echo "Prebuild STart"
+        - echo $CODEBUILD_SOURCE_VERSION
+        - echo $CODEBUILD_SOURCE_REPO_URL
+        - echo $CODEBUILD_WEBHOOK_TRIGGER
+        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+      # - command
+      # - command
+  build:
+    commands:
+        - "we are building on it...."
+      # - command
+      # - command
+  post_build:
+    commands:
+        - echo "POST build Start"
+      # - command
+      # - command
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
