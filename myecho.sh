@@ -5,7 +5,7 @@ function main {
   echo "hhhhh"
   # repo_clone $@
   pushed_files $@
-  echo "<><><><><><><><><><><><><><><><><>ASADSADASDASDSA><><><><><><><>"
+  echo "<><><><><><><><><><><><><><><><><>MAsti><><><><><><><>"
 }
 function repo_clone {
 	mkdir turbot-test-v5
