@@ -51,8 +51,9 @@ function pushed_files {
     #   pwd
     #   echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
     #   echo backchodi chal rahi hai bhai
-  	# 	# turbot inspect
-
+      cd $CODEBUILD_SRC_DIR_CLI
+      ./turbot-cli-linux inspect --dir $CODEBUILD_SRC_DIR
+      # turbot inspect
       echo ">>>>>>>>>>>>>>>>>>>>>HAVA CHAL RAHI HAI <<<<<<<<<<<<<<"
   	# 	if [ "$?" -ne "0" ]
   	# 	then
