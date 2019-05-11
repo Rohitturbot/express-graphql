@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "lorem ipsum"
+echo "HACKTHON >>>>>>>>>>>>>"
 function main {
   echo "hhhhh"
   # repo_clone $@
