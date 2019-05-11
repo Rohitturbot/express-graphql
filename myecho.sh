@@ -5,6 +5,7 @@ function main {
   echo "hhhhh"
   # repo_clone $@
   pushed_files $@
+  echo "<><><><><><><><><><><><><><><><><>ASADSADASDASDSA><><><><><><><>"
 }
 function repo_clone {
 	mkdir turbot-test-v5
@@ -34,28 +35,32 @@ function pushed_files {
   then
    	echo "Files got changed"
     # FILES=`git diff --name-only master $commit_id`
-    FILES=(packages/aws-acm/src/turbot.yml packages/aws-ecs/functions/rupesh/cmdb/index.js)
+    # FILES=(packages/aws-acm/src/turbot.yml packages/aws-ecs/functions/rupesh/cmdb/index.js)
   	echo $FILES
-  	for val in $FILES;
+    for i in {1..5}
     do
-  	  path=$(cut -d'/' -f 1-2 <<<$val)
-      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
-      echo $path
-      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
-  		cd $path
-      pwd
-      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
-      echo backchodi chal rahi hai bhai
-  		# turbot inspect
-
-      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
-  		if [ "$?" -ne "0" ]
-  		then
-    		error_msg "inspect not running"
-    		error+="$path service package has error"
-  		fi
-      cd ../../
+      echo "Welcome $i times"
     done
+  	# for val in $FILES;
+    # do
+  	#   path=$(cut -d'/' -f 1-2 <<<$val)
+    #   echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+    #   echo $path
+    #   echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+  	# 	cd $path
+    #   pwd
+    #   echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+    #   echo backchodi chal rahi hai bhai
+  	# 	# turbot inspect
+
+    #   echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+  	# 	if [ "$?" -ne "0" ]
+  	# 	then
+    # 		error_msg "inspect not running"
+    # 		error+="$path service package has error"
+  	# 	fi
+    #   # cd ../../
+    # done
   fi
   # git checkout master
 }
