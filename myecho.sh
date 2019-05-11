@@ -22,6 +22,7 @@ function repo_clone {
 
 function pushed_files {
 	echo "Started"
+  cd ../
   cd express-graphql
 	# branch_name='add-aws-ec2-cmdb'
   commit_id=$CODEBUILD_RESOLVED_SOURCE_VERSION
