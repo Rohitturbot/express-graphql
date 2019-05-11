@@ -31,6 +31,8 @@ function pushed_files {
   echo $branch_name
   echo $commit_id
 	git checkout $branch_name
+  echo "subham suggestions"
+  git branch
 	if [[ `git diff --name-only master $branch_name` ]];
   then
    	echo "Files got changed"
