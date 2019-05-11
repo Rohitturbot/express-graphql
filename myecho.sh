@@ -23,43 +23,39 @@ function repo_clone {
 
 function pushed_files {
 	echo "Started"
-  # cd ../
-  # cd express-graphql
-	# branch_name='add-aws-ec2-cmdb'
   commit_id=$CODEBUILD_RESOLVED_SOURCE_VERSION
   git branch
-  temp_branch_name=`git branch --contains $commit_id`
-  branch_name=$temp_branch_name | rev | cut -d' ' -f1
-  echo ">>>>>>>>>>>>>>>>>>>"
-  echo $temp_branch_name
-  echo ">>>>>>>>>>>>>>>>>>>"
-  echo ">>>>>>>>>>>>>>>>>>>"
-  echo $branch_name
-  echo $commit_id
 	# git checkout $branch_name
+  echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
 	git checkout $commit_id
   echo "subham suggestions"
-  # git branch
+  echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
 	if [[ `git diff --name-only master $commit_id` ]];
   then
    	echo "Files got changed"
-    FILES=`git diff --name-only master $commit_id`
+    # FILES=`git diff --name-only master $commit_id`
+    FILES=(packages/aws-acm/src/turbot.yml packages/aws-ecs/functions/rupesh/cmdb/index.js)
   	echo $FILES
-  # 	for val in $FILES;
-  #   do
-  # 	  path=$(cut -d'/' -f 1-2 <<<$val)
-  #     echo $path
-  # 		cd $path
-  #     pwd
-  #     echo backchodi chal rahi hai bhai
-  # 		# turbot inspect
-  # 		# if [ "$?" -ne "0" ]
-  # 		# then
-  #   	# 	error_msg "inspect not running"
-  #   	# 	error+="$path service package has error"
-  # 		# fi
-  #     # cd ../../
-    # done
+  	for val in $FILES;
+    do
+  	  path=$(cut -d'/' -f 1-2 <<<$val)
+      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+      echo $path
+      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+  		cd $path
+      pwd
+      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+      echo backchodi chal rahi hai bhai
+  		# turbot inspect
+
+      echo ">>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<"
+  		if [ "$?" -ne "0" ]
+  		then
+    		error_msg "inspect not running"
+    		error+="$path service package has error"
+  		fi
+      cd ../../
+    done
   fi
   # git checkout master
 }
