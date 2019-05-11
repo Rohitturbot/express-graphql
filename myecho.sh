@@ -28,7 +28,9 @@ function pushed_files {
 	# branch_name='add-aws-ec2-cmdb'
   commit_id=$CODEBUILD_RESOLVED_SOURCE_VERSION
   git branch
-  `git branch --contains $commit_id` > log.txt
+  temp_branch_name=`git branch --contains $commit_id`
+  branch_name=$temp_branch_name | rev | cut -d' ' -f1
+
   echo $branch_name
   echo $commit_id
 	git checkout $branch_name
