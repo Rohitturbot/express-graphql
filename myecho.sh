@@ -22,12 +22,13 @@ function repo_clone {
 
 function pushed_files {
 	echo "Started"
-  cd ../
-  cd express-graphql
+  # cd ../
+  # cd express-graphql
 	# branch_name='add-aws-ec2-cmdb'
   commit_id=$CODEBUILD_RESOLVED_SOURCE_VERSION
   branch_name=`git branch --contains $commit_id`
-  echo branch_name
+  echo $branch_name
+  echo $commit_id
 	git checkout $branch_name
 	if [[ `git diff --name-only master $branch_name` ]];
   then
