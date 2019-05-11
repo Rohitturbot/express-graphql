@@ -26,6 +26,7 @@ function pushed_files {
   # cd express-graphql
 	# branch_name='add-aws-ec2-cmdb'
   commit_id=$CODEBUILD_RESOLVED_SOURCE_VERSION
+  git branch
   branch_name=`git branch --contains $commit_id`
   echo $branch_name
   echo $commit_id
@@ -60,3 +61,5 @@ function error_msg {
   echo -e "${RED}ERROR: $1 ${OFF}"
 }
 main $@
+
+1f74d4faf04dcecbc6d6cf2647033ce23507f866
