@@ -36,14 +36,15 @@ function pushed_files {
   echo ">>>>>>>>>>>>>>>>>>>"
   echo $branch_name
   echo $commit_id
-	git checkout $branch_name
+	# git checkout $branch_name
+	git checkout $commit_id
   echo "subham suggestions"
-  git branch
-	# if [[ `git diff --name-only master $branch_name` ]];
-  # then
-  #  	echo "Files got changed"
-  #   FILES=`git diff --name-only master $branch_name`
-  # 	echo $FILES
+  # git branch
+	if [[ `git diff --name-only master $commit_id` ]];
+  then
+   	echo "Files got changed"
+    FILES=`git diff --name-only master $commit_id`
+  	echo $FILES
   # 	for val in $FILES;
   #   do
   # 	  path=$(cut -d'/' -f 1-2 <<<$val)
@@ -58,8 +59,8 @@ function pushed_files {
   #   	# 	error+="$path service package has error"
   # 		# fi
   #     # cd ../../
-  #   done
-  # fi
+    # done
+  fi
   # git checkout master
 }
 
