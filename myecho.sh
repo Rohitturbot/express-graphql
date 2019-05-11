@@ -30,7 +30,10 @@ function pushed_files {
   git branch
   temp_branch_name=`git branch --contains $commit_id`
   branch_name=$temp_branch_name | rev | cut -d' ' -f1
-
+  echo ">>>>>>>>>>>>>>>>>>>"
+  echo $temp_branch_name
+  echo ">>>>>>>>>>>>>>>>>>>"
+  echo ">>>>>>>>>>>>>>>>>>>"
   echo $branch_name
   echo $commit_id
 	git checkout $branch_name
