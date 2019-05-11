@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "jkjknjnkjn"
+echo "lorem ipsum"
 function main {
   echo "hhhhh"
   # repo_clone $@
