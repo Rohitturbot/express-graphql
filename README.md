@@ -98,7 +98,3 @@ mutation{
   }
 }
 ```
-
-##Turbot Testing
-
-Github testing for events from codebuild core
